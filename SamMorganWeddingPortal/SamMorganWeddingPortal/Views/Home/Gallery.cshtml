@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Views/Home/_Template.cshtml";
+}
+
+@section head
+{
+    <link rel="stylesheet" type="text/css" href="~/Scripts/shadowbox/shadowbox.css">
+}
+
+@section scripts
+{
+    <script type="text/javascript" src="~/Scripts/shadowbox/shadowbox.js"></script>
+    <script type="text/javascript">
+        Shadowbox.init({
+            slideshowDelay: 5,
+            modal: false,
+            continuous: true
+        });
+
+        $(document).ready(function () {
+            $(".gallery-image a").each(function () {
+                var imageUrl = $(this).attr("href");
+                var thumbUrl = imageUrl.replace("_full.", "_thumb.");
+                $(this).css("background-image", "url('" + thumbUrl + "')");
+            });
+        });
+
+        //style = "background-image:url('../../Images/gallery/gallery001_thumb.jpg');"
+    </script>
+}
+
+
+<div class="row theme-color-background gradient-75">
+    <div class="col-xs-12 gallery">
+        <p>Even though we met over 7 years ago in New Jersey, we have spent most of our time together in places far away from the East Coast. Our life together has taken us from Bloomington, Indiana all the way to Sevilla, Spain and many place in between. Below are a few snapshots from our adventures. Click on any of the pictures to see the full image.</p>
+    </div>
+</div>
+
+<div class="row theme-color-background gradient-75">
+    <div class="col-xs-12 gallery">
+        <div class="gallery-image"><a href="../../Images/gallery/gallery001_full.jpg" rel="shadowbox[gallery]" style="background-position: -55px -40px;"></a></div>
+        <div class="gallery-image"><a href="../../Images/gallery/gallery002_full.jpg" rel="shadowbox[gallery]" style="background-position: -55px -40px;"></a></div>
+        <div class="gallery-image"><a href="../../Images/gallery/gallery003_full.jpg" rel="shadowbox[gallery]" style="background-position: -55px -10px;"></a></div>
+        <div class="gallery-image"><a href="../../Images/gallery/gallery004_full.jpg" rel="shadowbox[gallery]" style="background-position: -55px -10px;"></a></div>
+        <div class="gallery-image"><a href="../../Images/gallery/gallery005_full.jpg" rel="shadowbox[gallery]" style="background-position: -55px -10px;"></a></div>
+        <div class="gallery-image"><a href="../../Images/gallery/gallery006_full.jpg" rel="shadowbox[gallery]" style="background-position: -55px -10px;"></a></div>
+        <div class="gallery-image"><a href="../../Images/gallery/gallery007_full.jpg" rel="shadowbox[gallery]" style="background-position: -55px -40px;"></a></div>
+    </div>
+</div>
+

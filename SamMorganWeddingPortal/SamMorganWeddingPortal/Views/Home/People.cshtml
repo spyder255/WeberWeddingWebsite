@@ -1,0 +1,61 @@
+﻿@using SamMorganWeddingPortal.Models
+@{
+    ViewBag.Title = "People";
+    Layout = "~/Views/Home/_Template.cshtml";
+}
+
+<div class="row theme-color-background gradient-75">
+    <div class="col-xs-12">
+        <p>COMING SOON!</p>
+    </div>
+</div>
+
+@*<div class="row bridal-party-select-row theme-color-background gradient-75">
+    <div class="col-xs-6 text-center">
+        <a id="groomsmen-button" href="#groomsmen">GROOMSMEN</a>
+    </div>
+    <div class="col-xs-6 text-center">
+        <a id="bridesmaids-button" href="#bridesmaids">BRIDESMAIDS</a>
+    </div>
+</div>
+<div id="groomsmen-div" class="row theme-color-background gradient-75">
+    <div class="col-md-4 col-sm-6 col-xs-12">@Html.Partial("_BridalPartyBio", new BridalPartyBioModel("Guy 1", "Best Man", "Brother", ""))</div>
+    <div class="col-md-4 col-sm-6 col-xs-12">@Html.Partial("_BridalPartyBio", new BridalPartyBioModel("Guy 1", "Best Man", "Brother", ""))</div>
+    <div class="col-md-4 col-sm-6 col-xs-12">@Html.Partial("_BridalPartyBio", new BridalPartyBioModel("Guy 1", "Best Man", "Brother", ""))</div>
+    <div class="col-md-4 col-sm-6 col-xs-12">@Html.Partial("_BridalPartyBio", new BridalPartyBioModel("Guy 1", "Best Man", "Brother", ""))</div>
+    <div class="col-md-4 col-sm-6 col-xs-12">@Html.Partial("_BridalPartyBio", new BridalPartyBioModel("Guy 1", "Best Man", "Brother", ""))</div>
+    <div class="col-md-4 col-sm-6 col-xs-12">@Html.Partial("_BridalPartyBio", new BridalPartyBioModel("Guy 1", "Best Man", "Brother", ""))</div>
+</div>
+<div id="bridesmaids-div" class="row theme-color-background gradient-75">
+    <div class="col-md-4 col-sm-6 col-xs-12">@Html.Partial("_BridalPartyBio", new BridalPartyBioModel("Girl 1", "Maid of Honor", "Sister", ""))</div>
+    <div class="col-md-4 col-sm-6 col-xs-12">@Html.Partial("_BridalPartyBio", new BridalPartyBioModel("Girl 1", "Maid of Honor", "Sister", ""))</div>
+    <div class="col-md-4 col-sm-6 col-xs-12">@Html.Partial("_BridalPartyBio", new BridalPartyBioModel("Girl 1", "Maid of Honor", "Sister", ""))</div>
+    <div class="col-md-4 col-sm-6 col-xs-12">@Html.Partial("_BridalPartyBio", new BridalPartyBioModel("Girl 1", "Maid of Honor", "Sister", ""))</div>
+    <div class="col-md-4 col-sm-6 col-xs-12">@Html.Partial("_BridalPartyBio", new BridalPartyBioModel("Girl 1", "Maid of Honor", "Sister", ""))</div>
+    <div class="col-md-4 col-sm-6 col-xs-12">@Html.Partial("_BridalPartyBio", new BridalPartyBioModel("Girl 1", "Maid of Honor", "Sister", ""))</div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#groomsmen-button").click(function() {
+                $("#groomsmen-div").show();
+                $("#groomsmen-button").addClass("active");
+                $("#bridesmaids-div").hide();
+                $("#bridesmaids-button").removeClass("active");
+            });
+
+            $("#bridesmaids-button").click(function () {
+                $("#groomsmen-div").hide();
+                $("#groomsmen-button").removeClass("active");
+                $("#bridesmaids-div").show();
+                $("#bridesmaids-button").addClass("active");
+            });
+
+            $("#groomsmen-button").addClass("active");
+            $("#bridesmaids-div").hide();
+        });
+    </script>
+}*@
+

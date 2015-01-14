@@ -1,0 +1,366 @@
+﻿a {
+  /* color: #428bca;*/
+  color: #000000;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:visited {
+  /*color: #2a6496;
+  text-decoration: underline;*/
+  text-decoration: none;
+  color: #000000;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-image: url('../Images/bg-pattern.jpg');
+    font-family: 'Nunito', sans-serif;
+}
+
+p {
+    color: #f1f1f1;
+}
+
+label {
+    font-weight: normal;
+}
+
+.page-title {
+    font-family: 'Alice', serif;
+}
+
+.navbar-fixed-top {
+    border-width: 1px;
+}
+
+.nav > li > a {
+    font-family: 'Alice', serif;
+}
+
+.navbar {
+    background-color: white;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    -webkit-box-shadow: 0 0 10px black;
+    -ms-box-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px black;
+    /*min-height: 643px;*/
+}
+
+.body-content a:hover {
+    text-decoration: underline;
+}
+
+.body-content a.active {
+    text-decoration: underline;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+
+
+
+.wedding-date {
+    font-family: 'Alice', serif;
+}
+
+.theme-color-foreground, .theme-color-foreground:visited, .theme-color-foreground:focus, .theme-color-foreground:hover {
+    color: #8E8E8E;
+}
+
+.theme-color-background {
+    background-color: #8E8E8E;
+}
+
+.theme-color-background.gradient-75 {
+    background-color: rgba(142, 142, 142, 0.75);
+}
+
+.welcome-image {
+    width: 100%;
+}
+
+.welcome-box-outer {
+    background-color: #F8F8F8;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    -moz-min-width: 330px;
+    -ms-min-width: 330px;
+    -o-min-width: 330px;
+    -webkit-min-width: 330px;
+    min-width: 330px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    height: 180px;
+    position: relative;
+    border: 15px solid #F8F8F8;
+}
+
+.welcome-box-inner {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: #8E8E8E 1px solid;
+    font-family: 'Alice', serif;
+    text-align: center;
+    padding: 10px 50px;
+}
+
+.welcome-box-inner .header-text {
+    font-size: 26px;
+    padding-top: 15px;
+}
+
+.page-title-box-outer {
+    background-color: #F8F8F8;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    -moz-min-width: 330px;
+    -ms-min-width: 330px;
+    -o-min-width: 330px;
+    -webkit-min-width: 330px;
+    min-width: 330px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 90px;
+    position: relative;
+    border: 15px solid #F8F8F8;
+}
+
+.page-title-box-inner {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: #8E8E8E 1px solid;
+    font-family: 'Alice', serif;
+    text-align: center;
+    padding: 10px 10px;
+}
+
+.page-title-box-inner .header-text {
+    font-size: 26px;
+}
+
+.hotel-image {
+    width: 100%;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0 0 10px rgb(113, 113, 113);
+    -ms-box-shadow: 0 0 10px rgb(113, 113, 113);
+    box-shadow: 0 0 10px rgb(113, 113, 113);
+}
+
+.bridal-party-bio {
+    height: 90px;
+    margin: 10px;
+    padding: 5px;
+    background: #F8F8F8;
+    -webkit-transition: background-color 0.5s ease-in-out 0;
+    -moz-transition: background-color 0.5s ease-in-out 0;
+    -ms-transition: background-color 0.5s ease-in-out 0;
+    -o-transition: background-color 0.5s ease-in-out 0;
+    transition: background-color 0.5s ease-in-out 0;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.bridal-party-bio:hover {
+    background-color: rgb(232, 233, 255);
+}
+
+.bridal-party-bio-image {
+    height: 100%;
+    float: left;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.bridal-party-bio-content {
+    float: left;
+    padding-left: 5px;
+}
+
+.bridal-party-bio-content .name {
+    font-size: 16px;
+}
+
+.bridal-party-bio-content .relationship {
+    font-style: italic;
+}
+
+.bridal-party-select-row {
+    height: 30px;
+    line-height: 30px;
+}
+
+.gallery {
+    display: flex;
+    -ms-align-content: flex-start;
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    justify-content: center;
+}
+
+.gallery-image {
+    width: 190px;
+    height: 190px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.gallery-image a {
+    height: 384px;
+    width: 384px;
+    display: block;
+    background-repeat: no-repeat;
+    -ms-background-size: 80%;
+    background-size: 80%;
+    -webkit-transition: all 1s ease 0;
+    -moz-transition: all 1s ease 0;
+    -ms-transition: all 1s ease 0;
+    -o-transition: all 1s ease 0;
+    transition: all 1s ease 0;
+}
+
+.gallery-image a:hover {
+    -ms-background-size: 90%;
+    background-size: 90%;
+}
+
+.guest-book {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.guestbook-entry {
+    background-color: rgb(248, 248, 248);
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.guestbook-entry .message {
+    
+}
+
+.guestbook-entry .author {
+    float: right;
+    font-weight: bold;
+}
+
+.guestbook-entry .post-date {
+    float: left;
+    clear: right;
+    font-style: italic;
+}
+
+@media (min-width: 768px) {
+    .page-title {
+        font-family: 'Alice', serif;
+        padding-top: 30px;
+        font-size: 36px;
+    }
+
+    body {
+        padding-top: 151px;
+    }
+
+    .navbar-nav {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        width: 732px;
+    }
+
+    .navbar-nav > li > a {
+        padding-top: 20px;
+        padding-bottom: 8px;
+        border-bottom: transparent solid 1px;
+        margin-right: 15px;
+        margin-left: 15px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .nav > li > a:hover, .nav > li > a:focus {
+        background-color: inherit;
+        padding-bottom: 1px;
+        -webkit-transition: padding-bottom 0.15s ease-in-out 0s;
+        -moz-transition: padding-bottom 0.15s ease-in-out 0s;
+        -ms-transition: padding-bottom 0.15s ease-in-out 0s;
+        -o-transition: padding-bottom 0.15s ease-in-out 0s;
+        transition: padding-bottom 0.15s ease-in-out 0s;
+        border-bottom: black solid 1px;
+    }
+
+    .navbar-nav > li > a.active, .nav > li > a.active:hover, .nav > li > a.active:focus {
+        border-bottom: black solid 1px;
+        padding-bottom: 1px;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -ms-transition: none;
+        -o-transition: none;
+        transition: none;
+    }
+
+    .welcome-box-outer {
+        margin-top: 113px;
+        margin-bottom: 0;
+    }
+
+    .gallery {
+        justify-content: flex-start;
+    }
+
+    .gallery-image {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+
+@media (min-width: 992px) {
+    .welcome-box-outer {
+        margin-top: 175px;
+        margin-bottom: 0;
+    }
+
+    .gallery-image {
+        width: 188px;
+        height: 188px;
+    }
+}
+
+
+
+@media (min-width: 1200px) {
+    .welcome-box-outer {
+        margin-top: 231px;
+        margin-bottom: 0;
+    }
+}

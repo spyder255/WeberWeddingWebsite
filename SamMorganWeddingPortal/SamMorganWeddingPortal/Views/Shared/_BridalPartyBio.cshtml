@@ -1,0 +1,10 @@
+﻿@model SamMorganWeddingPortal.Models.BridalPartyBioModel
+           
+<div class="bridal-party-bio">
+    <img src="@(String.IsNullOrEmpty(Model.ImagePath) ? "../../Images/anonymous-person.jpg" : Model.ImagePath)" class="bridal-party-bio-image"/>
+    <div class="bridal-party-bio-content">
+        <span class="name">@Model.Name</span><br />
+        @Model.Title<br />
+        <span class="relationship">@Model.Relationship</span>
+</div>
+</div>
