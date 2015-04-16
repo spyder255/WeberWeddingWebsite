@@ -28,6 +28,10 @@ label {
     font-weight: normal;
 }
 
+.display-none {
+    display: none;
+}
+
 .page-title {
     font-family: 'Alice', serif;
 }
@@ -42,6 +46,11 @@ label {
 
 .navbar {
     background-color: white;
+}
+
+.navbar-brand.subhead {
+    font-size: 14px;
+    float: right;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -279,6 +288,25 @@ textarea {
     font-style: italic;
 }
 
+.people-header {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.registry-image {
+    background-color: white;
+    border-radius: 10px;
+    padding: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.registry-item {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 @media (min-width: 768px) {
     .page-title {
         font-family: 'Alice', serif;
@@ -294,7 +322,8 @@ textarea {
         float: none;
         margin-left: auto;
         margin-right: auto;
-        width: 732px;
+        /*width: 732px;*/
+        width: 652px;
     }
 
     .navbar-nav > li > a {

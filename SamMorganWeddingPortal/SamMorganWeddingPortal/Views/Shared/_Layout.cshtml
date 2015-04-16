@@ -33,19 +33,20 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("Sam & Morgan", "Index", "Home", new { area = "" }, new { @class = "navbar-brand hidden-sm hidden-md hidden-lg page-title theme-color-foreground" })
+                <div class="navbar-brand subhead page-title hidden-sm hidden-md hidden-lg">November 7th, 2015</div>
             </div>
             <div class="navbar-collapse collapse">
                 <div class="row hidden-xs">
                     <div class="col-sm-12 text-center page-title">@Html.ActionLink("Sam & Morgan", "Index", "Home", new { }, new { @class="theme-color-foreground" })</div>
                 </div>
                 <div class="row hidden-xs">
-                    <div class="col-sm-12 text-center wedding-date theme-color-foreground">NOVEMBER 7th, 2015</div>
+                    <div class="col-sm-12 text-center wedding-date theme-color-foreground">NOVEMBER 7th, 2015<span class="days-left-counter"></span></div>
                 </div>
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("WELCOME", "Index", "Home", new { }, (ViewBag.Title == "Welcome" ? (object) new { @class = "active" } : new {  }))</li>
                     <li>@Html.ActionLink("ACCOMMODATIONS", "Accommodations", "Home", new { }, (ViewBag.Title == "Accommodations" ? (object)new { @class = "active" } : new { }))</li>
                     <li>@Html.ActionLink("EVENTS", "Events", "Home", new { }, (ViewBag.Title == "Events" ? (object)new { @class = "active" } : new { }))</li>
-                    <li>@Html.ActionLink("PEOPLE", "People", "Home", new { }, (ViewBag.Title == "People" ? (object)new { @class = "active" } : new { }))</li>
+                    @*<li>@Html.ActionLink("PEOPLE", "People", "Home", new { }, (ViewBag.Title == "People" ? (object)new { @class = "active" } : new { }))</li>*@
                     <li>@Html.ActionLink("GALLERY", "Gallery", "Home", new { }, (ViewBag.Title == "Gallery" ? (object)new { @class = "active" } : new { }))</li>
                     <li>@Html.ActionLink("REGISTRY", "Registry", "Home", new { }, (ViewBag.Title == "Registry" ? (object)new { @class = "active" } : new { }))</li>
                     <li>@Html.ActionLink("GUEST BOOK", "GuestBook", "Home", new { }, (ViewBag.Title == "Guest Book" ? (object)new { @class = "active" } : new { }))</li>
@@ -64,5 +65,29 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $daysLeftSpan = $(".days-left-counter");
+            if ($daysLeftSpan !== null && $daysLeftSpan !== undefined) {
+                var today = new Date();
+                var weddingDate = new Date("November 7, 2015");
+                var msPerDay = 24 * 60 * 60 * 1000;
+                var timeLeft = (weddingDate.getTime() - today.getTime());
+                var daysLeft;
+                if (timeLeft > 0) {
+                    daysLeft = Math.floor(timeLeft / msPerDay);
+                } else {
+                    daysLeft = Math.ceil(timeLeft / msPerDay);
+                }
+                if (daysLeft > 0) {
+                    $daysLeftSpan.text(" - Only " + daysLeft + " days until the big day!")
+                } else if (daysLeft == 0) {
+                    $daysLeftSpan.text(" - Today's the big day!")
+                } else {
+                    $daysLeftSpan.text(" - Happily married for " + Math.abs(daysLeft) + " days!")
+                }
+            }
+        });
+    </script>
 </body>
 </html>

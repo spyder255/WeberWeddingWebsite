@@ -4,9 +4,6 @@
 
 <div class="row theme-color-background gradient-75">
     <div class="row">
-        <div class="col-sm-6 hidden-xs">
-            <img src="../../Images/welcome.jpg" class="welcome-image" />
-        </div>
         <div class="col-sm-6 col-xs-12">
             <div class="welcome-box-outer">
                 <div class="welcome-box-inner">
@@ -15,8 +12,36 @@
                 </div>
             </div>
         </div>
+        <div class="col-sm-6 col-xs-12">
+            <img src="../../Images/welcome1.jpg" id="welcomeImage1" class="welcome-image" />
+            <img src="../../Images/welcome2.jpg" id="welcomeImage2" class="welcome-image display-none" />
+            <img src="../../Images/welcome3.jpg" id="welcomeImage3" class="welcome-image display-none" />
+        </div>
     </div>
 </div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        var imageNum;
+
+        $(document).ready(function () {
+            imageNum = 1;
+            window.setInterval(rotateWelcomeImage, 7000);
+        });
+
+        function rotateWelcomeImage() {
+            $("#welcomeImage" + imageNum).fadeOut(700, function() {
+                imageNum++;
+                if (imageNum > 3) {
+                    imageNum = 1;
+                }
+                $("#welcomeImage" + imageNum).hide();
+                $("#welcomeImage" + imageNum).fadeIn(700);
+            });
+        }
+    </script>
+}
 
 @*<div class="jumbotron">
     <h1>ASP.NET - STAGING</h1>

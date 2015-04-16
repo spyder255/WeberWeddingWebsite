@@ -68,9 +68,12 @@ namespace SamMorganWeddingPortal.Controllers
 
         public ActionResult PostGuestBookEntry(GuestBookModel model)
         {
-            this.AddNewGuestBookEntry(model.NewEntry);
+            if (this.ModelState.IsValid)
+            {
+                this.AddNewGuestBookEntry(model.NewEntry);
+            }
 
-            return RedirectToAction("GuestBook");
+            return this.RedirectToAction("GuestBook");
         }
 
         private void AddNewGuestBookEntry(GuestBookEntryModel newEntry)
