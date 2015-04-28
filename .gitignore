@@ -229,3 +229,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/SamMorganWeddingPortal/SamMorganWeddingPortal/Web.Debug.config
+/SamMorganWeddingPortal/SamMorganWeddingPortal/Web.Release.config
