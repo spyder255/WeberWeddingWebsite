@@ -3,15 +3,22 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
+using Newtonsoft.Json;
 using SamMorganWeddingPortal.Models;
 
 namespace SamMorganWeddingPortal.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly string RECAPTCHA_SECRET = ConfigurationManager.AppSettings["RecaptchaSecret"];
+        private readonly string RECAPTCHA_RESPONSE_KEY = "g-recaptcha-response";
+
         public ActionResult Index()
         {
             return View();
@@ -68,9 +75,26 @@ namespace SamMorganWeddingPortal.Controllers
 
         public ActionResult PostGuestBookEntry(GuestBookModel model)
         {
-            if (this.ModelState.IsValid)
+            if (this.Request.Form.AllKeys.Contains(RECAPTCHA_RESPONSE_KEY))
             {
-                this.AddNewGuestBookEntry(model.NewEntry);
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("https://www.google.com/");
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    // New code:
+                    var response = client.GetAsync(String.Format("recaptcha/api/siteverify?secret={0}&response={1}&remoteip={2}", RECAPTCHA_SECRET, this.Request.Form.Get(RECAPTCHA_RESPONSE_KEY), this.Request.UserHostAddress)).Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var recaptchaResponseString = response.Content.ReadAsStringAsync().Result;
+                        var recaptchaResponse = JsonConvert.DeserializeObject<RecaptchaResponse>(recaptchaResponseString);
+                        if (recaptchaResponse != null && recaptchaResponse.Success && this.ModelState.IsValid)
+                        {
+                            this.AddNewGuestBookEntry(model.NewEntry);
+                        }
+                    }
+                }
             }
 
             return this.RedirectToAction("GuestBook");

@@ -312,6 +312,10 @@ textarea {
     margin-bottom: 10px;
 }
 
+.btn.guest-book-submit {
+    margin-top: 10px;
+}
+
 @media (min-width: 768px) {
     .page-title {
         font-family: 'Alice', serif;

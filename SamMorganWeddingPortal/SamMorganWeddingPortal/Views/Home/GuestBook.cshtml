@@ -1,8 +1,15 @@
-﻿@model SamMorganWeddingPortal.Models.GuestBookModel
+﻿@using System.Configuration
+@model SamMorganWeddingPortal.Models.GuestBookModel
 
 @{
     ViewBag.Title = "Guest Book";
     Layout = "~/Views/Home/_Template.cshtml";
+    var recaptchaSiteKey = ConfigurationManager.AppSettings["RecaptchaSiteKey"];
+}
+
+@section head
+{
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 }
 
 <div class="row theme-color-background gradient-75">
@@ -10,7 +17,8 @@
         @using (Html.BeginForm("PostGuestBookEntry", "Home", FormMethod.Post, new { @id = "EntryForm", onsubmit="return validateForm()" }))
         {
             @Html.EditorFor(model => model.NewEntry, "GuestBookEntryEditor")
-            <text><input class="btn btn-default" type="submit" value="SUBMIT" /></text>
+            <div class="g-recaptcha" data-sitekey="@recaptchaSiteKey"></div>
+            <text><input class="btn btn-default guest-book-submit" type="submit" value="SUBMIT" /></text>
         }
     </div>
 </div>
